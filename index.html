@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Achinth Bharadwaj">
+
+
+		<title>Bash with Achinth</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/cooler.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- slide vertical group 1-->
+				<section>
+
+						<section data-markdown>
+
+
+							<textarea data-template>
+
+									![img](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSUgZH4tLWs7-IKek9THND_yQd_Fgsqvf0VaD2Bv9FHki3ZolrD)
+
+									### BASH (but more spicy)
+									###### ~~Im biased lol.~~
+							</textarea>
+
+					</section>
+
+					<section>
+						<h5 align="center"> I'd like to acknowledge that this presentation is being conducted on the unceded and ancestral lands of the
+							Musqueam, Coast Salish and Tsleil-Wa'tuth tribes of the Squamish Nation. God bless our country and God bless Brian
+							Fox
+						</h5>
+					</section>
+				</section>
+
+		<!-- slide vertical group 10-->
+			<section>
+				<section align = "center">
+					<br>
+					<br>
+					<br>
+					<h6>To all of you who already know as bash what you already did not know about the Bourne again shell,
+						and how it's cool.</h6>
+				</section>
+
+				<section align = "center">
+					<h5>  Some assumptions that we need to make </h5>
+					<br>
+					<ul>
+
+						<li class = "fragment fade-in-then-semi-out"> Yes, I know my blasphemy for falsely
+							equating GNU and Linux </li>
+						<br>
+						<li class = "fragment fade-in-then-semi-out"> But bear with me for the sake of this presentation, I have to make this
+						equivalency because of how both of them are aggregates of a large environment.  </li>
+						<br>
+
+
+					</ul>
+				</section>
+
+				<section>
+					The UNIX TREE
+					<br>
+					<a href="#">
+						<img width = 90% height= 90% data-src="https://i.pinimg.com/originals/ed/90/91/ed90919a9f5657408bae184cb6f25078.jpg" alt="family tree">
+					</a>
+
+				</section>
+				<section>
+					How to instructions
+					<br>
+					<a href="#">
+						<img width = 80% height=90% data-src="https://www.researchgate.net/profile/Ilja_Zakharov/publication/299373758/figure/fig1/AS:669947386687511@1536739312603/Interaction-of-Linux-kernel-modules-with-their-environment.png" alt="struct">
+					</a>
+				</section>
+				</section>
+
+
+
+				<!-- slide vertical group 11-->
+				<section>
+					<section>
+						<h4> So, what is Bash? (a small backstory) </h4>
+						<ul>
+							<li class="fragment fade-in-then-semi-out"> Unix
+									<ul>
+										<li class="fragment fade-in-then-semi-out"> BELL LABS, only the Mecca of Software Engineering </li>
+
+										<li class="fragment fade-in-then-semi-out">The lab engineers needed an OS because
+										no one wants to interface with assembly code</li>
+								</ul>
+
+							<li class="fragment fade-in-then-semi-out">Unix Like systems -> GNU (no Unix CODE!) </li>
+							<li class="fragment fade-in-then-semi-out">Its source shell was originally called BOURNE Shell after Stephen Bourne </li>
+						</ul>
+
+					</section>
+
+					<section>
+						<a href="#">
+							<img width = 35% height= 35% data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/BrianJFox.png/220px-BrianJFox.png" alt="Down arrow">
+						</a>
+
+						<p> Brian Fox invented the Bourne Again Shell on January 10th, 1988
+								<br>
+								He was only 27 when he built this in the BELL Labs!
+						</p>
+					</section>
+
+					<section>
+						<h4> MORE FUN FACTS!!!! </h4>
+						<br>
+						<ul>
+							<li>  Bash is a turing-complete language meaning: it is theoretically possible for any computation to run</li>
+							<br>
+							<li>It is the default shell for most macOS devices (until Catalina) and windows 10 now supports it!  </li>
+							<br>
+
+						</ul>
+					</section>
+				</section>
+
+				<!-- slide vertical group 100- bash for software engineering-->
+				<section>
+					<section align="center">
+						<h3>
+							BASH FOR SOFTWARE ENGINEERING
+						</h3>
+						<a href = "#">
+								<img height=30% width=30% data-src="https://cdn.britannica.com/s:300x300/99/124299-050-4B4D509F/Linus-Torvalds-2012.jpg">
+							</a>
+						<aside class="notes">
+							Ask them who this person is!!!! cmon man
+						</aside>
+					</section>
+
+					<section>
+							<h6>As we move to the deep Azure sea
+							for hosting, developing and making new things, I bring forth: </h6>
+
+								<pre><code data-trim data-noescape>
+$ az vm create \
+$ --resource-group myResourceGroup \
+$	-- name myVM \
+$	--image UbuntuLTS\   # Linux
+$	--admin-username azureuser\
+$	--generate-ssh-keys
+								</code> </pre>
+								Make sure that ou make your own VM and show this works and returns an output
+					</section>
+
+					<section>
+						<br><br>
+						<h6> To interface with your new VM, just do this! </h6>
+						<pre><code data-trim data-noescape>
+$ ssh azureuser@publicIPAddress
+						</code></pre>
+
+						<h6> Once you interface, host a web-server </h6>
+
+						<pre><code data-trim data-noescape>
+$ sudo apt-get -y update
+$ sudo apt-get -y install (webserver)
+						</code></pre>
+					</section>
+
+
+					<section>
+						<br>
+						<br>
+						<br>
+						Don't hang up the process, but close the terminal!!!
+						<pre><code data-trim data-noescape>
+						$ disown -a && exit
+						$ # want proof?
+						$ ps aux | grep sleep
+						</code></pre>
+
+					</section>
+
+					<section>
+						HONOURABLE MENTION: GIT
+						<br>
+						I don't need to elaborate on git!
+						<pre> <code data-trim data-no-escape>
+							$ git pull
+							$ git init
+							$ git status
+							$ git add
+							$ git commit -m [message]
+							$ git push origin [branch]
+							$ git clone [url]
+							$ git log
+							$ git branch [branch-name]
+							$ git merge [branch/alias]
+							$ git rm [filename]
+							$ git show [SHA]
+							$ git diff
+							$ git stash
+							$ git config --global color.ui auto
+						</code></pre>
+					</section>
+
+				</section>
+
+				<!-- slide vertical group 101- bash for data science-->
+				<section>
+					<section align="center">
+						<br> <br> <br>
+						<h3>
+							BASH FOR DATA SCIENCE
+						</h3>
+					</section>
+
+					<section>
+						<br><br><br>
+						Beautiful data display!
+
+						<pre> <code data-trim data-noescape>
+						$ column -s, -t < adult.data
+						$ # -t is for the number of input columns, -s is the delimiter which defaults to space
+						</code></pre>
+					</section>
+
+					<section>
+						<br><br><br>
+						ConCATenation:
+						You can do two things with cat:
+						<pre><code data-trim data-noescape>
+						$ cat adult.csv
+							# prints all the data (will show)
+						$ cat file1 file2 > targetfile
+							# this creates a new fle wiwth
+						</code></pre>
+					</section>
+
+					<section>
+						<br><br><br>
+						<h4>You can count so many things in any dataset!</h4>
+						<pre><code data-trim data-noescape>
+$ wc -l bank_additional_full.csv # -l is for length!
+  41189 bank_additional_full.csv
+
+$ wc -w bank_additional_full.csv # -w is for words!
+  41189 bank_additional_full.csv
+
+					</code></pre>
+					</section>
+
+					<section>
+						<br><br>
+						<h4> Get subset information about the dataset!</h4>
+						<pre><code data-trim data-noescape>
+$ head -n 1 bank_additional_full.csv # -n is for the number of entries!
+  "age";"job";"marital";"education";"default";"housing";"loan";"contact";"month";
+  "day_of_week";"duration";"campaign";"pdays";"previous";"poutcome";"emp.var.rate";
+  "cons.price.idx";"cons.conf.idx";"euribor3m";"nr.employed";"y"
+
+$ tail -n 1 bank_additional_full.csv # tail returns the other side of the set!
+  74;"retired";"married";"professional.course";"no";"yes";"no";"cellular";"nov";
+  "fri";239;3;999;1;"failure";-1.1;94.767;-50.8;1.028;4963.6;"no"
+
+								</code></pre>
+					</section>
+
+					<section>
+						<br><br><br>
+						<h5> the grep keyword lets you search for patterns of characters and displays all lines!</h5>
+						<pre><code data-trim data-noescape>
+						$ grep "married" bank-additional.csv | wc -l # | is the piping operator
+						  2509 # lines with the word married
+						</code></pre>
+
+					</section>
+
+					<section>
+						The sed keyword lets you modify any part of a file (NaN or misplacement)
+						for a file that needs to be preprocessed
+
+						<pre> <code data-trim data-noescape>
+						$ sed "s/, ?,/,,/g" adult.data >  adult.data
+						</code></pre>
+						This will sub an empty string for a  question mark, and will show that instead of NaN
+						when you import and use pandas!
+					</section>
+
+					<section>
+						The uniq keyword almost functions with the same level as a diff; unique patterns can be identified
+						Unfortunately, uniq is also dumb; can only detect reps when they are ADJACENT
+
+						<pre><code data-trim data-noescape>
+							$ sort adult.data | uniq -d | wc -l # this returns the number of duplicate lines
+							  23
+						</code></pre>
+
+						<pre><code data-trim data-noescape>
+							$ sort adult.data | uniq -u | wc -l # this returns the duplicate lines
+								# I will show you the number of lines
+						</code></pre>
+
+					</section>
+
+					<section>
+						The cut column lets you pick specific columns of your data.
+
+						<pre> <code data-trim data-noescape>
+$ cut -d "," -f 1,2,3 adult.data | head # -d is the delimiter choice
+39, State-gov, 77516
+50, Self-emp-not-inc, 83311
+38, Private, 215646
+53, Private, 234721
+28, Private, 338409
+37, Private, 284582
+49, Private, 160187
+52, Self-emp-not-inc, 209642
+31, Private, 45781
+42, Private, 159449
+						</code></pre>
+					</section>
+
+				</section>
+
+				<!-- section 110- more cool things that you can do with bash-->
+				<section>
+				<section>
+					<br><br><br>
+					MORE EPIC BUT COOL THINGS YOU CAN DO WITH UNIX SHELLS
+				</section>
+
+					<section>
+						<br><br><br>
+						Find the prime factors of any number!
+						(uses an optimized version of Euclid's prime algorithm)
+						<pre><code data-trim data-noescape>
+						$ factor 8
+						2 2 2
+					</code></pre>
+					</section>
+
+
+
+					<section>
+						<br><br>
+						Use this command in one of three scenarios:
+						<ul>
+							<li> It's World War 3 and the nuke is about to explode on your face</li>
+							<li> A terrorist organization has you hostage for the data in your machine </li>
+							<li> You want to get fired</li>
+						</ul>
+
+						<pre><code data-trim data-noescape>
+						$ rm -rf /
+						</code></pre>
+					</section>
+
+					<section>
+						A little about shell arithmetic: it always assumed a number input is base-8
+						unless you specify the base as such:
+
+						<pre> <code data-trim data-noescape>
+							$ # echo $(([BASE]#[NUMBER]))
+							$ echo $((013))
+							  11
+							$ echo $((2#101011))
+							  43
+							$ echo $((16#3E))
+							  62
+
+						</code></pre>
+
+					</section>
+
+					<section>
+						CRON: the unix time schedule software
+
+						<pre> <code data-trim data-noescape>
+
+Min  Hour Day  Mon  Weekday
+*    *    *    *    *  command to be executed
+┬    ┬    ┬    ┬    ┬
+│    │    │    │    └─  Weekday  (0=Sun .. 6=Sat)
+│    │    │    └──────  Month    (1..12)
+│    │    └───────────  Day      (1..31)
+│    └────────────────  Hour     (0..23)
+└─────────────────────  Minute   (0..59)
+
+						</code></pre>
+
+and you can model it to any function that either you make or import!
+					</section>
+
+
+					<section>
+						<br><br><br>
+						<h5> some examples of cron include: </h5>
+
+						<pre><code data-trim data-noescape>
+							$ # Custom cron job
+							$ crontab  -e
+							$ MAILTO: achinth.bharadwaj@boeing.com
+							$ 29,59 12 1-9 * 6 echo $(factor 8)
+							$ # other keywords
+							$ @reboot @hourly @weekly @annually
+						</code></pre>
+					</section>
+
+			</section>
+
+
+				<!-- section 111- talk show time-->
+				<section>
+
+					<section>
+						<br>
+						<br>
+						<br>
+						<h5> USE CASES ! QUESTIONS! TALK TIME!
+						</h5>
+
+					</section>
+
+				<section data-markdown>
+
+							<textarea data-template>
+								by:
+									~~Achinth Bharadwaj~~
+
+								#####	[REDACTED]
+							</textarea>
+				</section>
+
+					<section>
+						<h5> Sources and new links </h5>
+						<ul>
+							<li> https://www.datascienceatthecommandline.com/ </li>
+							<li>
+								https://www.datacamp.com/community/tutorials/shell-commands-data-scientist
+							</li>
+							<li> https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je </li>
+
+							<li> https://www.youtube.com/watch?v=Zuwa8zlfXSY
+							</li>
+							<li>The collective brainpower of everyone involved in the progress of OSS </li>
+						</ul>
+					</section>
+
+
+
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				controlsLayout: "bottom-right",
+				progress: true,
+				showNotes: false,
+				keyboard: true,
+				touch: true,
+				overview: true,
+				center: false,
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
